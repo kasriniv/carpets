@@ -1,0 +1,71 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "carpets"
+  },
+  "paths" : {
+    "/carpets" : {
+      "get" : {
+        "summary" : "get carpets",
+        "description" : "get carpets",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "all good",
+            "schema" : {
+              "$ref" : "#/definitions/carpets"
+            }
+          }
+        },
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      },
+      "post" : {
+        "summary" : "post new carpets",
+        "description" : "post new carpets",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "send carpets type",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/carpets"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "all good",
+            "schema" : {
+              "$ref" : "#/definitions/carpets"
+            }
+          }
+        },
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      }
+    }
+  },
+  "definitions" : {
+    "carpets" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "category" : {
+          "type" : "string"
+        },
+        "region" : {
+          "type" : "string"
+        }
+      },
+      "title" : "Root Type for carpets",
+      "description" : "The root of the carpets type's schema."
+    }
+  }
+}
