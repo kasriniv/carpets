@@ -1,0 +1,67 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "carpets",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/carpets": {
+      "get": {
+        "summary": "get carpets",
+        "description": "get carpets",
+        "responses": {
+          "200": {
+            "description": "all good",
+            "schema": {
+              "$ref": "#/definitions/carpets"
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "post new carpets",
+        "description": "post new carpets",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "send carpets type",
+            "schema": {
+              "$ref": "#/definitions/carpets"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "all good",
+            "schema": {
+              "$ref": "#/definitions/carpets"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "carpets": {
+      "title": "Root Type for carpets",
+      "description": "The root of the carpets type's schema.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
